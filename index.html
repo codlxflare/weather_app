@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Прогноз погоды</title>
+  <link rel="stylesheet" href="main.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1>Прогноз погоды</h1>
+      <div class="header-controls">
+        <button id="themeButton" class="icon-btn" title="Сменить тему">
+          <span class="icon">🌓</span>
+        </button>
+        <button id="locationButton" class="icon-btn" title="Мое местоположение">
+          <span class="icon">📍</span>
+        </button>
+      </div>
+    </header>
+    
+    <main class="app-main">
+      <div class="search-container">
+        <div class="search-box">
+          <input type="text" id="cityInput" placeholder="Введите город">
+          <button id="searchButton" class="primary-btn">
+            <span class="icon">🔍</span> Поиск
+          </button>
+        </div>
+      </div>
+      
+      <div class="weather-display">
+        <div class="current-weather" id="currentWeather">
+          <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Загрузка данных...</p>
+          </div>
+        </div>
+        
+        <div class="weather-details-grid">
+          <div class="detail-card">
+            <div class="detail-icon">🌡️</div>
+            <div class="detail-info">
+              <h3>Ощущается</h3>
+              <p id="feelsLikeTemp">--°C</p>
+            </div>
+          </div>
+          <div class="detail-card">
+            <div class="detail-icon">💧</div>
+            <div class="detail-info">
+              <h3>Влажность</h3>
+              <p id="humidity">--%</p>
+            </div>
+          </div>
+          <div class="detail-card">
+            <div class="detail-icon">📊</div>
+            <div class="detail-info">
+              <h3>Давление</h3>
+              <p id="pressure">-- hPa</p>
+            </div>
+          </div>
+          <div class="detail-card">
+            <div class="detail-icon">💨</div>
+            <div class="detail-info">
+              <h3>Ветер</h3>
+              <p id="wind">-- км/ч</p>
+            </div>
+          </div>
+        </div>
+        
+        <h2 class="section-title">Прогноз на 3 дня</h2>
+        <div class="forecast-container" id="forecastContainer"></div>
+        
+        <div class="air-quality-card">
+          <h2 class="section-title">Качество воздуха</h2>
+          <div class="aqi-container">
+            <div class="aqi-value" id="aqiValue">--</div>
+            <div class="aqi-info">
+              <p class="aqi-level" id="aqiLevel">--</p>
+              <p class="aqi-description" id="aqiDescription">Данные загружаются</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    
+    <footer class="app-footer">
+      <p>Обновлено: <span id="lastUpdated">--:--</span></p>
+    </footer>
+  </div>
+</body>
+</html>
